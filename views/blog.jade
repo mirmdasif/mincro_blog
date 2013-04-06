@@ -1,0 +1,35 @@
+html
+head
+    title title
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(href='/css/bootstrap.css', rel='stylesheet', type='text/css')
+    link(href='/css/bootstrap-responsive.css', rel='slylesheet', type='text/css')
+    link(href='/css/style.css', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='/js/jquery-1.7.2.js')
+    script(type='text/javascript', src='/js/bootstrap.js')
+  body.container-fluid
+    .navbar.navbar-inverse
+      .navbar-inner
+        a.brand(href='/blog') Blog
+        ul.nav
+          li
+            a(href='/') Home
+          li
+            a(href='/blog/new') New Post  
+    .row-fluid
+      .span2
+      .span8
+        .row-fluid
+          .span12
+            each article in articles
+              ul.thumbnails
+                li.span12
+                  .thumbnail
+                    img(data-src='holder.js/300x200', alt='')
+                    h3  
+                      a(href='/blog/'+article._id)!= article.title
+                    p #{article.body}
+                    small This Article was created at #{article.created_at}
+                  
+               
+      .span2

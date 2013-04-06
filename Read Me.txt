@@ -1,0 +1,7 @@
+To install dependecy module using npm write
+npm install -d
+
+To run
+node app.js
+
+server will listen at port 3000
